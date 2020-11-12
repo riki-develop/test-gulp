@@ -6,6 +6,11 @@ const pkg = require('./package.json');
 const conf = pkg['gulp-config'];
 const sizes = conf.sizes;
 
+// function copyFiles() {
+//     return src('./src/**/*.html')
+//     .pipe(dest('./dist'));
+// }
+
 function icon(done) {
     for (let size of sizes) {
         let width = size[0];
@@ -24,4 +29,5 @@ function icon(done) {
     done();
 }
 
+// exports.copyFiles = copyFiles;
 exports.icon = icon;
