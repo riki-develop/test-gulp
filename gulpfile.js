@@ -37,7 +37,9 @@ function styles() {
     .pipe($.sourcemaps.init())
     .pipe($.sass())
     .pipe($.postcss([
-        autoprefixer()
+        autoprefixer({
+            cascade: false
+        })
     ]))
     .pipe($.sourcemaps.write('.'))
     .pipe(dest('./dist/css'));
